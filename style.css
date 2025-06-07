@@ -1,0 +1,134 @@
+
+
+   @keyframes pulseBorder {
+	    0% {
+		box-shadow: 0 0 0px rgba(255, 182, 193, 0.3); /* rosa claro */
+	  }
+	  50% {
+		box-shadow: 0 0 12px rgba(173, 216, 230, 0.6); /* azul claro */
+	  }
+	  100% {
+		box-shadow: 0 0 0px rgba(255, 182, 193, 0.3); /* rosa claro */
+	  }
+	}
+    .video-bubble {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      z-index: 999;
+      box-shadow: 0 0 10px rgba(0,0,0,0.8);
+      cursor: pointer;
+	  animation: pulseBorder 2s infinite ease-in-out;
+    }
+
+    .video-bubble.expanded {
+      /*top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      width: 100vw;
+      height: 100vh;
+      border-radius: 0;
+      z-index: 1000;*/
+	 position: fixed;
+	  top: 0;
+	  left: 0;
+	  width: 100vw; /* largura total da tela */
+	  height: 100vh; /* altura total da tela */
+	  z-index: 9999;
+	  background-color: #000000cc; /* fundo para bordas laterais */
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	  animation: none;
+	  border-radius: 0;
+	  padding: 0;
+	  animation: none;  
+    }
+	/* vídeo vertical ocupa toda a altura */
+	.video-bubble.expanded video {
+	  height: 100vh;
+	  width: auto;
+	  object-fit: contain; /* ou "cover" se quiser preencher mesmo cortando um pouco */
+	  border-radius: 0;
+	}
+
+    .video-bubble video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .close-btn {
+      display: none;
+      position: absolute;
+      top: 8px;
+      right: 12px;
+      background: rgba(0, 0, 0, 0.4);
+      color: white;
+      border: none;
+      font-size: 18px;
+      border-radius: 50%;
+      width: 28px;
+      height: 28px;
+      line-height: 26px;
+      text-align: center;
+      cursor: pointer;
+      z-index: 1001;
+    }
+		
+	.video-controls {
+	  display: none;
+	}
+
+	.video-bubble.expanded .video-controls {
+	  display: flex;
+	  position: absolute;
+	  top: 10px;
+	  left:60%;
+	  transform: translateX(-50%);
+	  gap: 8px;
+	  z-index: 10;
+	}
+
+	.video-controls button {
+	  background: rgba(255, 255, 255, 0.2);
+	  border: none;
+	  color: white;
+	  font-size: 18px;
+	  padding: 4px 8px;
+	  border-radius: 6px;
+	  width: 28px;
+	  height: 25px;
+	 
+	  cursor: pointer;
+	  transition: background 0.2s;
+	}
+
+	.video-controls img {
+	  width: 13px;
+	  height: 15px;
+	  padding-right:4px
+	}
+
+	.video-controls button:hover {
+	  background: rgba(255, 255, 255, 0.3);
+	}
+
+
+    .video-bubble.expanded .close-btn {
+      display: block;
+	 
+    }
+
+    @media (min-width: 768px) {
+      .video-bubble {
+        width: 120px;
+        height: 120px; 213px; /* 9:16 aspect */
+      }
+    }
