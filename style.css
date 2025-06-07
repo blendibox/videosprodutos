@@ -13,7 +13,7 @@
 	}
     .video-bubble {
       position: fixed;
-      bottom: 84;
+      bottom: 84px;
       right: 10px;
       width:100px;
       height: 100px;
