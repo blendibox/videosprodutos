@@ -6,7 +6,7 @@
   const muteBtn = document.getElementById("muteBtn");
   const muteIcon = document.getElementById('muteIcon');
   const urlParams = new URLSearchParams(window.location.search);
-  const v = ((urlParams.get('video'))?urlParams.get('video'):'3em1_puffer');// apenas o nome do video
+  const v = ((urlParams.get('video'))?urlParams.get('video'):'3em1_puffer'); -> substitua [3em1_puffer] pelo nome do seu vídeo default
   const nomeVideo = './videos/' + v + '.mp4'; 
 
   video.src = nomeVideo;
