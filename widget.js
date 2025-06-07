@@ -31,7 +31,7 @@ function getWidgetBubble(){
 	// append widget
 	 newNode = parser.parseFromString(divBubble, "text/html");
 	divMainBublle.prepend(newNode.documentElement);
-	console.log(newNode.documentElement);
+
 }
 
 
