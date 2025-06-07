@@ -7,11 +7,12 @@
   const muteIcon = document.getElementById('muteIcon');
  
  const h1VideoB =  document.getElementsByClassName('main-product-name')[0].textContent;
- console.log(h1VideoB);
+
+ const   nVideo =  h1VideoB.split("|")
  
 
  const divBubble = document.getElementById('divBubble').getAttribute("data-nome");   
-  const nomeVideo = './videos/' + divBubble + '.mp4'; 
+  const nomeVideo = './videos/' + nVideo[1]+ '.mp4'; 
 
   video.src = nomeVideo;
 
