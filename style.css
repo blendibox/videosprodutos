@@ -13,10 +13,10 @@
 	}
     .video-bubble {
       position: fixed;
-      bottom: 86;
-      right: 20px;
-      width: 90px;
-      height: 90px;
+      bottom: 84;
+      right: 10px;
+      width:100px;
+      height: 100px;
       border-radius: 50%;
       overflow: hidden;
       transition: all 0.3s ease;
