@@ -12,7 +12,7 @@
  
 
  const divBubble = document.getElementById('divBubble').getAttribute("data-nome");   
-  const nomeVideo = './videos/' + nVideo[1]+ '.mp4'; 
+  const nomeVideo = './videos/' + nVideo[1].trim()+ '.mp4'; 
 
   video.src = nomeVideo;
 
