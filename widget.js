@@ -6,8 +6,7 @@ document.addEventListener('readystatechange', event => {
 
 function getWidgetBubble(){
 	
-	var videoBubbleName = document.getElementById('divBubble').getAttribute("data-nome");
-	console.log(videoBubbleName);
+	
 	var parser = new DOMParser();
 	var divMainHead = document.getElementsByTagName('head')[0];
 	var divMainBublle =  document.getElementsByTagName('body')[0];
