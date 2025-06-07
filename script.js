@@ -6,7 +6,7 @@
   const muteBtn = document.getElementById("muteBtn");
   const muteIcon = document.getElementById('muteIcon');
  
- const divBubble = document.getElementById(divBubble).getAttribute("data-nome");   
+ const divBubble = document.getElementById('divBubble').getAttribute("data-nome");   
   const nomeVideo = './videos/' + divBubble + '.mp4'; 
 
   video.src = nomeVideo;
