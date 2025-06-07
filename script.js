@@ -10,7 +10,7 @@
 
   const  nVideo =  h1VideoB.split("|");
 
-  const divBubble = document.getElementById('divBubble').getAttribute("data-nome");   
+  //const divBubble = document.getElementById('divBubble').getAttribute("data-nome");   
   const nomeVideo = './videos/' + nVideo[1].trim()+ '.mp4'; 
 
   video.src = nomeVideo;
