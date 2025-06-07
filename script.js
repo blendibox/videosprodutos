@@ -5,13 +5,13 @@
   const pauseIcon = document.getElementById('pauseIcon');
   const muteBtn = document.getElementById("muteBtn");
   const muteIcon = document.getElementById('muteIcon');
- 
+  const urlWidgetBubble = 'https://video.blendibox.com.br';// altere aqui
   const h1VideoB =  document.getElementsByClassName('main-product-name')[0].textContent;
 
   const  nVideo =  h1VideoB.split("|");
-
+ 
   //const divBubble = document.getElementById('divBubble').getAttribute("data-nome");   
-  const nomeVideo = './videos/' + nVideo[1].trim()+ '.mp4'; 
+  const nomeVideo = urlWidgetBubble + '/videos/' + nVideo[1].trim()+ '.mp4'; 
 
   video.src = nomeVideo;
 
@@ -31,10 +31,10 @@
 	  e.stopPropagation();
 	   if (video.paused) {
 		video.play();
-		pauseIcon.src = './images/videocommands/pause.png';
+		pauseIcon.src = urlWidgetBubble + '/images/videocommands/pause.png';
 	  } else {
 		video.pause();
-		pauseIcon.src = './images/videocommands/play.png';
+		pauseIcon.src = urlWidgetBubble + '/images/videocommands/play.png';
 	  }
   });
 
@@ -42,6 +42,6 @@ muteBtn.addEventListener("click", (e) => {
    e.stopPropagation();
    video.muted = !video.muted;
    muteIcon.src = video.muted
-    ? './images/videocommands/soundx.png'
-    : './images/videocommands/sound.png';
+    ? urlWidgetBubble + '/images/videocommands/soundx.png'
+    : urlWidgetBubble + '/images/videocommands/sound.png';
 });

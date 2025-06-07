@@ -13,7 +13,7 @@ function getWidgetBubble(){
 	var urlWidgetBubble = 'https://video.blendibox.com.br';// altere aqui
 	var scriptBubble = urlWidgetBubble + '/script.js';
 	var cssBubble = urlWidgetBubble +'/style.css';
-	var divBubble = '<div class="video-bubble" id="videoBubble">  <video id="produtoVideo" src="" autoplay muted loop playsinline ></video>  <dd id="blendidrop_video" value="" style="display:none"></dd>  <div class="video-controls" id="videoControls">   <button id="muteBtn">    <img id="muteIcon" src="./images/videocommands/sound.png" alt="Mute" />   </button>   <button id="pauseBtn">    <img id="pauseIcon" src="./images/videocommands/pause.png" alt="Pause" />   </button>   <button id="closeBtn">    <img src="./images/videocommands/close.png" alt="Fechar" />   </button>  </div> </div>';
+	var divBubble = '<div class="video-bubble" id="videoBubble">  <video id="produtoVideo" src="" autoplay muted loop playsinline ></video>  <dd id="blendidrop_video" value="" style="display:none"></dd>  <div class="video-controls" id="videoControls">   <button id="muteBtn">    <img id="muteIcon" src="'+ urlWidgetBubble + '/images/videocommands/sound.png" alt="Mute" />   </button>   <button id="pauseBtn">    <img id="pauseIcon" src="'+urlWidgetBubble + '/images/videocommands/pause.png" alt="Pause" />   </button>   <button id="closeBtn">    <img src="'+urlWidgetBubble + '/images/videocommands/close.png" alt="Fechar" />   </button>  </div> </div>';
 
 	// append js 
 	const scriptB = document.createElement('script');
