@@ -1,0 +1,4 @@
+# Credenciais e tokens da Shopee — NUNCA subir pro GitHub
+shopee-token.json
+.env
+*.local
