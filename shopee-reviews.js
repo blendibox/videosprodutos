@@ -30,7 +30,7 @@ const CONFIG = {
 };
 
 // base dos SEUS links (o reviews.json vai apontar pra cá, não pra Shopee)
-const BASE_CDN = "https://cdn.jsdelivr.net/gh/blendibox/videosprodutos@main/";
+const BASE_CDN = "https://video.blendibox.com.br/";
 
 const MIN_ESTRELAS = 4;       // só 4 e 5 estrelas
 const SO_COM_TEXTO = true;    // só avaliações com texto
