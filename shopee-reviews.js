@@ -35,10 +35,24 @@ const BASE_CDN = "https://video.blendibox.com.br/";
 const MIN_ESTRELAS = 4;       // só 4 e 5 estrelas
 const SO_COM_TEXTO = true;    // só avaliações com texto
 
-// (opcional) força o "código" de um item específico. Normalmente nem precisa,
-// porque classificamos pelo NOME do produto logo abaixo.
+// Mapa item_id (Shopee) -> código do produto no site. Tem PRIORIDADE sobre o
+// nome: é o jeito certo de evitar que produtos diferentes com nome parecido
+// (vários "tote") se misturem. Produtos que só existem na Shopee -> "outros"
+// (não aparecem nas páginas das bolsas do site). Itens fora do mapa caem na
+// classificação por nome (classifica()).
 const ITEM_TO_PRODUTO = {
-  // 23993511062: "3em1",
+  23993511062: "3em1",        // Bolsa Puffer 3 em 1
+  22697974672: "maxi",        // Maxi Bolsa Puffer
+  22698132292: "tote",        // Tote Maxi Bolsa Puffer  (o do site)
+  49201589860: "transversal", // Bolsa Maxi Puffer Transversal
+  44552316510: "viagem",      // Bolsa Puffer Viagem
+  // --- só na Shopee (sem produto no site) -> não aparecem nas páginas das bolsas ---
+  53504311015: "outros",      // Kit Bolsa Tote + Estojo
+  52510869352: "outros",      // Bolsa Utility Note Tote
+  53500171022: "outros",      // Alça (acessório)
+  57970982853: "outros",      // Bolsa Cloud (0 aval. por enquanto; mapear quando subir no site)
+  23793866719: "outros",      // Bolsa de ombro e de mão
+  22393409440: "necessaire",  // Necessaire Puffer
 };
 
 // classifica a avaliação pelo NOME do produto -> código usado no widget
@@ -205,6 +219,7 @@ async function baixar(url, dir, nomeBase, kind) {
     }
     reviews.push({
       id: String(c.comment_id || ""),
+      item_id: c.__item_id,
       produto: ITEM_TO_PRODUTO[c.__item_id] || classifica(c.__item_nome),
       nome: c.buyer_username || "Cliente Shopee",
       avatar: "",
