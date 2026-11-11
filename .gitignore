@@ -2,3 +2,6 @@
 shopee-token.json
 .env
 *.local
+
+# Captura crua da SHEIN (dados intermediários da coleta) — não subir
+shein-raw.json
